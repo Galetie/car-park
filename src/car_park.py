@@ -33,12 +33,14 @@ class CarPark:
             raise Exception(f"Plate {plate} is already in the car park!")
 
         self.plates.append(plate)
+        self.update_displays()
 
     def remove_car(self, plate):
         if plate not in self.plates:
             raise Exception(f"Plate {plate} does not exist in the car park!")
 
         self.plates.remove(plate)
+        self.update_displays()
 
     def update_displays(self):
         pass # stub
