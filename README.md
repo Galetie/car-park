@@ -17,3 +17,6 @@ initiative.
 | CarPark    |            |         |
 | Sensor     |            |         |
 | Display    |            |         |
+
+### 2.4.3
+![Added stubs for classes](screenshots/stubs-for-classes.png)
