@@ -14,8 +14,16 @@ class CarPark:
     ):
         self.location = location
         self.capacity = capacity
-        self.plates = plates
-        self.displays = displays
+
+        if plates is None:
+            self.plates = []
+        else:
+            self.plates = plates
+
+        if displays is None:
+            self.displays = []
+        else:
+            self.displays = displays
 
     def __str__(self):
         return f"Car park at {self.location}, with {self.capacity} bays"

@@ -10,8 +10,8 @@ class TestCarPark(unittest.TestCase):
         self.assertIsInstance(self.car_park, CarPark)
         self.assertEqual(self.car_park.location, "123 Example Street")
         self.assertEqual(self.car_park.capacity, 100)
-        self.assertEqual(self.car_park.plates, None)
-        self.assertEqual(self.car_park.displays, None)
+        self.assertEqual(self.car_park.plates, [])
+        self.assertEqual(self.car_park.displays, [])
         self.assertEqual(self.car_park.available_bays, 100)
 
     def test_add_car(self):
