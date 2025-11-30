@@ -1,7 +1,5 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 import random
-
-from car_park import CarPark
 
 
 class Sensor:
@@ -9,7 +7,7 @@ class Sensor:
             self,
             id: str = None,
             is_active: bool = False,
-            car_park: CarPark = None
+            car_park = None
     ):
         self.id = id
         self.is_active = is_active
