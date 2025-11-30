@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from pathlib import Path
 from display import Display
 from sensor import Sensor
 
@@ -9,8 +9,9 @@ class CarPark:
             self,
             location: str = 'Unknown',
             capacity: int = 0,
-            plates: list[str] = None,
-            displays: list[Display] = None
+            plates: list[str] | None = None,
+            displays: list[Display] | None = None,
+            log_file: Path | None = None
     ):
         self.location = location
         self.capacity = capacity
