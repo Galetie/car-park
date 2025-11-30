@@ -26,6 +26,8 @@ class CarPark:
         else:
             self.displays = displays
 
+        self.log_file = log_file if log_file is not None else Path("log.txt")
+
     def __str__(self):
         return f"Car park at {self.location}, with {self.capacity} bays"
 
