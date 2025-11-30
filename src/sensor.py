@@ -5,7 +5,7 @@ import random
 class Sensor:
     def __init__(
             self,
-            id: str = None,
+            id: int = None,
             is_active: bool = False,
             car_park = None
     ):
