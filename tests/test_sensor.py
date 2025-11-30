@@ -13,4 +13,5 @@ class TestSensor(unittest.TestCase):
         self.assertTrue(self.sensor.is_active)
 
     def test_detect_vehicle(self):
+        self.sensor = Sensor(1, True, self.car_park)
         self.sensor.detect_vehicle()
