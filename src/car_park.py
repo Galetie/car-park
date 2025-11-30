@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from display import Display
 from sensor import Sensor
 
@@ -45,7 +47,8 @@ class CarPark:
     def update_displays(self):
         display_data = {
             "available_bays": self.available_bays,
-            "temperature": 25 # TODO: Sensor or weather API
+            "temperature": 25, # TODO: Sensor or weather API
+            "time": datetime.now()
         }
 
         for display in self.displays:
