@@ -10,3 +10,10 @@ initiative.
 
 ## Evidence
 ![Initial commit](screenshots/image-of-github-after-push.png)
+
+### 2.3
+| Class Name | Attributes | Methods |
+|------------|------------|---------|
+| CarPark    |            |         |
+| Sensor     |            |         |
+| Display    |            |         |
