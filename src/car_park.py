@@ -18,11 +18,15 @@ class CarPark:
     def __str__(self):
         return f"Car park at {self.location}, with {self.capacity} bays"
 
-    def register(self, hardware: Sensor | Display):
+    def register(self, hardware: Sensor | Display) -> None:
         if isinstance(hardware, Sensor):
-            pass # stub
+            hardware.car_park = self
+            return
         elif isinstance(hardware, Display):
             self.displays.append(hardware)
+            return
+
+        raise Exception(f"Unsupported hardware: {type(hardware)}")
 
     def add_car(self, plate: str):
         if plate in self.plates:
