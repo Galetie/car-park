@@ -1,7 +1,7 @@
 class Display:
     def __init__(
             self,
-            id: str = None,
+            id: int = None,
             message: str = "",
             is_on: bool = False
     ):
@@ -13,5 +13,9 @@ class Display:
         return f"Display {self.id}: Welcome to the car park."
 
     def update(self, data: dict):
+        messages = []
+
         for key, value in data.items():
-            print(f"{key}: {value}")
+            messages.append(f"{key}: {value}")
+
+        self.message = "\n".join(messages)
