@@ -64,3 +64,9 @@ initiative.
 
 ![Unit tests](screenshots/display_test_fail.png)
 ![Unit tests](screenshots/display_test_pass.png)
+
+> Q: The car park register method should accept a Sensor (optional) or Display object. It should raise a TypeError if 
+> the object is neither a Sensor nor a Display. Before proceeding, think about where you would test this behaviour. 
+> Should you test it in the CarPark unit tests or the Display/Sensor unit tests? Why?
+> You should test in the CarPark unit test, as we are testing the method of the CarPark. It is ultimately the 
+> responsibility of the CarPark to test the validity.
