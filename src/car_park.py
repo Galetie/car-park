@@ -44,3 +44,7 @@ class CarPark:
 
     def update_displays(self):
         pass # stub
+
+    @property
+    def available_bays(self):
+        return self.capacity - len(self.plates)
