@@ -23,5 +23,5 @@ class Sensor:
         pass
 
     @abstractmethod
-    def detect_car(self):
+    def detect_vehicle(self):
         pass
