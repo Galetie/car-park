@@ -11,7 +11,7 @@ class CarPark:
             capacity: int = 0,
             plates: list[str] | None = None,
             displays: list[Display] | None = None,
-            log_file: Path | None = None
+            log_file: Path | str | None = None
     ):
         self.location = location
         self.capacity = capacity
@@ -26,7 +26,20 @@ class CarPark:
         else:
             self.displays = displays
 
-        self.log_file = log_file if log_file is not None else Path("log.txt")
+        if isinstance(log_file, str):
+            self.log_file = Path(log_file)
+        elif isinstance(log_file, Path):
+            self.log_file = log_file
+        else:
+            self.log_file = Path("log.txt")
+
+        self._create_log_file()
+
+    def _create_log_file(self):
+        if self.log_file is None:
+            raise ValueError("Log file cannot be None")
+
+        self.log_file.touch(exist_ok=True)
 
     def __str__(self):
         return f"Car park at {self.location}, with {self.capacity} bays"

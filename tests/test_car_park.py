@@ -4,6 +4,8 @@ from pathlib import Path
 
 
 class TestCarPark(unittest.TestCase):
+    LOG_FILE = Path("new_log.txt")
+
     def setUp(self):
         self.car_park = CarPark("123 Example Street", 100)
 
@@ -46,6 +48,13 @@ class TestCarPark(unittest.TestCase):
     def test_register_raises_type_error(self):
         with self.assertRaises(TypeError):
             self.car_park.register("This is a string")
+
+    def test_log_file_created(self):
+        _ = CarPark("123 Example Street", 100, log_file=self.LOG_FILE)
+        self.assertTrue(Path(self.LOG_FILE).exists())
+
+    def tearDown(self):
+        Path(self.LOG_FILE).unlink(missing_ok=True)
 
 
 if __name__ == "__main__":
