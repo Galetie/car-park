@@ -1,15 +1,9 @@
-# North Metro Software Python Project Template
+# Project Brief
+This project implements the Smart Parking System prototype for the City of Moondalup, built as part of a smart city
+initiative.
 
-A Python project template for all new projects in North Metro Software
-
-You may use the guidelines under `org/` for assessments and projects in the IP4RIoT cluster.
-
-## Additional Examples
-Here are other good examples of onboarding documents that relate to git and version control for you to browse:
-
-- [skybase](https://handbook.skybase.com.np/git-conventions/)
-- [thoughtbot](https://github.com/thoughtbot/guides/tree/main/git) (also see their excellent [code review](https://github.com/thoughtbot/guides/tree/main/code-review) guide!)
-- [GitLab Handbook](https://handbook.gitlab.com/handbook/product-development-flow/)
-
-# Note
-When using this repo as a template, you should update this readme to provide a general overview suitable for **YOUR** project.
+* This project uses sensors and displays to:
+* Track parking bay availability in real time in uncontrolled car parks
+* Show available bays, ambient temperature, and community announcements on digital displays
+* Store scanned vehicle licence plates for reference
+* Update information promptly as cars enter and exit
