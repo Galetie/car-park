@@ -35,3 +35,6 @@ class CarPark:
             raise Exception(f"Plate {plate} does not exist in the car park!")
 
         self.plates.remove(plate)
+
+    def update_displays(self):
+        pass # stub
