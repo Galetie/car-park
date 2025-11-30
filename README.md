@@ -61,3 +61,6 @@ initiative.
 > display, and leaves the display responsible for /how/ to display the information
 
 ![Unit tests](screenshots/unit-tests.png)
+
+![Unit tests](screenshots/display_test_fail.png)
+![Unit tests](screenshots/display_test_pass.png)
