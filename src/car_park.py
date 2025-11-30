@@ -13,3 +13,6 @@ class CarPark:
         self.capacity = capacity
         self.plates = plates
         self.displays = displays
+
+    def __str__(self):
+        return f"Car park at {self.location}, with {self.capacity} bays"
