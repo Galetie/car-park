@@ -50,3 +50,12 @@ initiative.
 >    * The CarPark class currently, as a hardcoded value
 >  * The time
 >    * None of them, but I suppose I'll go implement that now, and it'll be the CarPark class
+> 
+> Q2: What is the difference between an attribute and a property
+> A property is an interface to a value or attribute of an object. eg the available bays' property.
+> A attribute is just a value belonging to a class or object, such as the plates or displays.
+> 
+> Q3: Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage 
+> and one disadvantage of this approach.
+> Use of a dictionary allows us to easily define the data to display, associated with a key. This covers the /what/ to
+> display, and leaves the display responsible for /how/ to display the information
