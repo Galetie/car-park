@@ -23,3 +23,9 @@ class CarPark:
             pass # stub
         elif isinstance(hardware, Display):
             self.displays.append(hardware)
+
+    def add_car(self, plate: str):
+        if plate in self.plates:
+            raise Exception(f"Plate {plate} is already in the car park!")
+
+        self.plates.append(plate)
