@@ -20,3 +20,6 @@ initiative.
 
 ### 2.4.3
 ![Added stubs for classes](screenshots/stubs-for-classes.png)
+
+### 2.5.4
+![Git Tags](screenshots/git-tags.png)
