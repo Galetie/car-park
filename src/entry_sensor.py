@@ -2,4 +2,5 @@ from sensor import Sensor
 
 
 class EntrySensor(Sensor):
-    pass
+    def update_car_park(self, plate: str) -> None:
+        self.car_park.add_car(plate)
