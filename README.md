@@ -59,3 +59,5 @@ initiative.
 > and one disadvantage of this approach.
 > Use of a dictionary allows us to easily define the data to display, associated with a key. This covers the /what/ to
 > display, and leaves the display responsible for /how/ to display the information
+
+![Unit tests](screenshots/unit-tests.png)
