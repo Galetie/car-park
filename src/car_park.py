@@ -26,7 +26,7 @@ class CarPark:
             self.displays.append(hardware)
             return
 
-        raise Exception(f"Unsupported hardware: {type(hardware)}")
+        raise TypeError(f"Object must be a Sensor or Display, got: {type(hardware)}")
 
     def add_car(self, plate: str):
         if plate in self.plates:
