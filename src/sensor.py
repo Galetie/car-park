@@ -24,4 +24,5 @@ class Sensor:
 
     @abstractmethod
     def detect_vehicle(self):
-        pass
+        plate = self._scan_plate()
+        self.update_car_park(plate)
