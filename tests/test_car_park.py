@@ -9,6 +9,7 @@ class TestCarPark(unittest.TestCase):
 
     def test_car_park_initialized_with_all_attributes(self):
         self.assertIsInstance(self.car_park, CarPark)
+        self.assertEqual(self.car_park.log_file, Path("log.txt"))
         self.assertEqual(self.car_park.location, "123 Example Street")
         self.assertEqual(self.car_park.capacity, 100)
         self.assertEqual(self.car_park.plates, [])
