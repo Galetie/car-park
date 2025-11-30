@@ -7,3 +7,6 @@ initiative.
 * Show available bays, ambient temperature, and community announcements on digital displays
 * Store scanned vehicle licence plates for reference
 * Update information promptly as cars enter and exit
+
+## Evidence
+![Initial commit](screenshots/image-of-github-after-push.png)
