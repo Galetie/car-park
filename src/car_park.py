@@ -12,7 +12,8 @@ class CarPark:
             capacity: int = 0,
             plates: list[str] | None = None,
             displays: list[Display] | None = None,
-            log_file: Path | str | None = None
+            log_file: Path | str | None = None,
+            config_file: Path | str | None = None
     ):
         self.location = location
         self.capacity = capacity
@@ -36,8 +37,15 @@ class CarPark:
 
         self._create_log_file()
 
+        if isinstance(config_file, str):
+            self.config_file = Path(config_file)
+        elif isinstance(config_file, Path):
+            self.config_file = config_file
+        else:
+            self.config_file = Path("config.json")
+
     def write_config(self):
-        with open("config.json", "w") as f:  # TODO: use self.config_file; use Path; add optional parm to __init__
+        with self.config_file.open("w") as f:
             json.dump(
                 {
                     "location": self.location,

@@ -5,10 +5,13 @@ from display import Display
 car_park = CarPark(
     "moondalup",
     100,
-    "moondalup.txt"
+    "moondalup.txt",
+    config_file="moondalup_config.json"
 )
 
 # TODO: Write the car park configuration to a file called "moondalup_config.json"
+car_park.write_config()
+
 # TODO: Reinitialize the car park object from the "moondalup_config.json" file
 # TODO: create an entry sensor object with id 1, is_active True, and car_park car_park
 # TODO: create an exit sensor object with id 2, is_active True, and car_park car_park
