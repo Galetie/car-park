@@ -44,7 +44,7 @@ class CarPark:
 
     def update_displays(self):
         display_data = {
-            "available_bays": self.available_bays
+            "available_bays": self.available_bays,
             "temperature": 25 # TODO: Sensor or weather API
         }
 

@@ -42,3 +42,11 @@ initiative.
 > to display
 
 ![Added methods to the car park class](screenshots/methods-to-car-park.png)
+
+> Q1: Which class is responsible for each of the following pieces of information (and why)?
+>  * The number of available bays
+>    * The CarPark class, which keeps count via the available_bays property
+>  * The current temperature
+>    * The CarPark class currently, as a hardcoded value
+>  * The time
+>    * None of them, but I suppose I'll go implement that now, and it'll be the CarPark class
