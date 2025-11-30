@@ -40,3 +40,5 @@ initiative.
 > None of the classes are responsible for the time, however, python has an inbuilt datetime which can provide the
 > current time. So the class responsible for what is displayed (CarPark), can and should call this when determining what
 > to display
+
+![Added methods to the car park class](screenshots/methods-to-car-park.png)

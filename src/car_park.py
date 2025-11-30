@@ -48,6 +48,9 @@ class CarPark:
             "temperature": 25 # TODO: Sensor or weather API
         }
 
+        for display in self.displays:
+            display.update(display_data)
+
     @property
     def available_bays(self):
         return max(self.capacity - len(self.plates), 0)
