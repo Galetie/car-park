@@ -8,5 +8,4 @@ class ExitSensor(Sensor):
         return random.choice(self.car_park.plates)
 
     def update_car_park(self, plate: str) -> None:
-        self.car_park.add_car(plate)
-        print(f"Outgoing 🚗 vehicle detected. Plate: {plate}")  # CarPark should be responsible for this
+        self.car_park.remove_car(plate)

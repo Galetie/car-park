@@ -70,3 +70,8 @@ initiative.
 > Should you test it in the CarPark unit tests or the Display/Sensor unit tests? Why?
 > You should test in the CarPark unit test, as we are testing the method of the CarPark. It is ultimately the 
 > responsibility of the CarPark to test the validity.
+
+![Added methods to the car park class](screenshots/methods-to-car-park-2.png)
+
+## 3.1
+![Main.py output](screenshots/main-py.png)

@@ -2,6 +2,7 @@ from datetime import datetime
 from pathlib import Path
 from display import Display
 from sensor import Sensor
+import json
 
 
 class CarPark:
@@ -11,7 +12,8 @@ class CarPark:
             capacity: int = 0,
             plates: list[str] | None = None,
             displays: list[Display] | None = None,
-            log_file: Path | str | None = None
+            log_file: Path | str | None = None,
+            config_file: Path | str | None = None
     ):
         self.location = location
         self.capacity = capacity
@@ -34,6 +36,32 @@ class CarPark:
             self.log_file = Path("log.txt")
 
         self._create_log_file()
+
+        if isinstance(config_file, str):
+            self.config_file = Path(config_file)
+        elif isinstance(config_file, Path):
+            self.config_file = config_file
+        else:
+            self.config_file = Path("config.json")
+
+    def write_config(self):
+        with self.config_file.open("w") as f:
+            json.dump(
+                {
+                    "location": self.location,
+                    "capacity": self.capacity,
+                    "log_file": str(self.log_file),
+                    "config_file": str(self.config_file)
+                },
+                f
+            )
+
+    @classmethod
+    def from_config(cls, config_file=Path("config.json")):
+        config_file = config_file if isinstance(config_file, Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(location=config["location"], capacity=config["capacity"], log_file=config["log_file"])
 
     def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
@@ -66,12 +94,15 @@ class CarPark:
         self.update_displays()
         self._log_car_activity(plate, "entered")
 
+        print(f"Incoming 🚘 vehicle detected. Plate: {plate}")
+
     def remove_car(self, plate):
         if plate not in self.plates:
             raise ValueError(f"Plate {plate} does not exist in the car park!")
 
         self.plates.remove(plate)
         self.update_displays()
+        print(f"Outgoing 🚗 vehicle detected. Plate: {plate}")
 
     def update_displays(self):
         display_data = {
