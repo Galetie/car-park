@@ -1,8 +1,8 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABC
 import random
 
 
-class Sensor:
+class Sensor(ABC):
     def __init__(
             self,
             id: int = None,
@@ -20,7 +20,6 @@ class Sensor:
     def update_car_park(self, plate: str):
         pass
 
-    @abstractmethod
     def detect_vehicle(self):
         plate = self._scan_plate()
         self.update_car_park(plate)

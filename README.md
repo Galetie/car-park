@@ -72,3 +72,6 @@ initiative.
 > responsibility of the CarPark to test the validity.
 
 ![Added methods to the car park class](screenshots/methods-to-car-park-2.png)
+
+## 3.1
+![Main.py output](screenshots/main-py.png)

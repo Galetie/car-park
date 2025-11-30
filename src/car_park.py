@@ -50,7 +50,8 @@ class CarPark:
                 {
                     "location": self.location,
                     "capacity": self.capacity,
-                    "log_file": str(self.log_file)
+                    "log_file": str(self.log_file),
+                    "config_file": str(self.config_file)
                 },
                 f
             )
@@ -60,7 +61,7 @@ class CarPark:
         config_file = config_file if isinstance(config_file, Path) else Path(config_file)
         with config_file.open() as f:
             config = json.load(f)
-        return cls(config["location"], config["capacity"], log_file=config["log_file"])
+        return cls(location=config["location"], capacity=config["capacity"], log_file=config["log_file"])
 
     def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
@@ -93,12 +94,15 @@ class CarPark:
         self.update_displays()
         self._log_car_activity(plate, "entered")
 
+        print(f"Incoming 🚘 vehicle detected. Plate: {plate}")
+
     def remove_car(self, plate):
         if plate not in self.plates:
             raise ValueError(f"Plate {plate} does not exist in the car park!")
 
         self.plates.remove(plate)
         self.update_displays()
+        print(f"Outgoing 🚗 vehicle detected. Plate: {plate}")
 
     def update_displays(self):
         display_data = {
