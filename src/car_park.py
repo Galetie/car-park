@@ -47,7 +47,7 @@ class CarPark:
 
     def remove_car(self, plate):
         if plate not in self.plates:
-            raise Exception(f"Plate {plate} does not exist in the car park!")
+            raise ValueError(f"Plate {plate} does not exist in the car park!")
 
         self.plates.remove(plate)
         self.update_displays()
