@@ -37,10 +37,22 @@ class CarPark:
         self._create_log_file()
 
     def write_config(self):
-        pass
+        with open("config.json", "w") as f:  # TODO: use self.config_file; use Path; add optional parm to __init__
+            json.dump(
+                {
+                    "location": self.location,
+                    "capacity": self.capacity,
+                    "log_file": str(self.log_file)
+                },
+                f
+            )
 
-    def save_config(self):
-        pass
+    @classmethod
+    def from_config(cls, config_file=Path("config.json")):
+        config_file = config_file if isinstance(config_file, Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(config["location"], config["capacity"], log_file=config["log_file"])
 
     def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
