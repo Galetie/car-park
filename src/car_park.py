@@ -2,6 +2,7 @@ from datetime import datetime
 from pathlib import Path
 from display import Display
 from sensor import Sensor
+import json
 
 
 class CarPark:
@@ -34,6 +35,12 @@ class CarPark:
             self.log_file = Path("log.txt")
 
         self._create_log_file()
+
+    def write_config(self):
+        pass
+
+    def save_config(self):
+        pass
 
     def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
