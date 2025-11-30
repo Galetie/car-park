@@ -43,7 +43,10 @@ class CarPark:
         self.update_displays()
 
     def update_displays(self):
-        pass # stub
+        display_data = {
+            "available_bays": self.available_bays
+            "temperature": 25 # TODO: Sensor or weather API
+        }
 
     @property
     def available_bays(self):
