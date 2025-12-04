@@ -51,3 +51,21 @@ class TestSensor(unittest.TestCase):
         self.exit_sensor.detect_vehicle()
         self.assertEqual(len(self.car_park.plates), initial_count - 1)
         self.assertEqual(self.car_park.available_bays, 100)
+
+    def test_exit_sensor_scans_existing_plate(self):
+        self.entry_sensor = EntrySensor(1, True, self.car_park)
+        self.exit_sensor = ExitSensor(2, True, self.car_park)
+        
+        # Add three cars
+        self.entry_sensor.detect_vehicle()
+        self.entry_sensor.detect_vehicle()
+        self.entry_sensor.detect_vehicle()
+        plates_before = self.car_park.plates.copy()
+        
+        # Remove one car
+        self.exit_sensor.detect_vehicle()
+        
+        # Verify one of the original plates was removed
+        self.assertEqual(len(self.car_park.plates), 2)
+        # At least one original plate should remain
+        self.assertTrue(any(plate in plates_before for plate in self.car_park.plates))
