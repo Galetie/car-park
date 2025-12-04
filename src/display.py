@@ -1,4 +1,17 @@
 class Display:
+    """
+    A display unit for showing car park information.
+    
+    This class represents a physical or virtual display that shows
+    information about the car park such as available bays, temperature,
+    and current time to users.
+    
+    Attributes:
+        id (int): Unique identifier for the display.
+        message (str): Current message being displayed.
+        is_on (bool): Whether the display is powered on.
+    """
+    
     def __init__(
             self,
             id: int = None,
