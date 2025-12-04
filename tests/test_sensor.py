@@ -1,6 +1,7 @@
 import unittest
 from car_park import CarPark
 from entry_sensor import EntrySensor
+from exit_sensor import ExitSensor
 
 class TestSensor(unittest.TestCase):
     def setUp(self):
@@ -14,4 +15,16 @@ class TestSensor(unittest.TestCase):
 
     def test_detect_vehicle_entry(self):
         self.sensor = EntrySensor(1, True, self.car_park)
+        self.sensor.detect_vehicle()
+
+    def test_init_exit(self):
+        self.sensor = ExitSensor(2, True, self.car_park)
+        self.assertEqual(self.sensor.car_park, self.car_park)
+        self.assertEqual(self.sensor.id, 2)
+        self.assertTrue(self.sensor.is_active)
+
+    def test_detect_vehicle_exit(self):
+        self.sensor = ExitSensor(2, True, self.car_park)
+        # ensure method exists and can be called without raising
+        self.assertTrue(hasattr(self.sensor, "detect_vehicle"))
         self.sensor.detect_vehicle()
