@@ -6,12 +6,12 @@ class TestSensor(unittest.TestCase):
     def setUp(self):
         self.car_park = CarPark("123 Example Street", 100)
 
-    def test_init(self):
+    def test_init_entry(self):
         self.sensor = EntrySensor(1, True, self.car_park)
         self.assertEqual(self.sensor.car_park, self.car_park)
         self.assertEqual(self.sensor.id, 1)
         self.assertTrue(self.sensor.is_active)
 
-    def test_detect_vehicle(self):
+    def test_detect_vehicle_entry(self):
         self.sensor = EntrySensor(1, True, self.car_park)
         self.sensor.detect_vehicle()
