@@ -36,6 +36,9 @@ class TestSensor(unittest.TestCase):
 
         # Add a car
         self.entry_sensor.detect_vehicle()
+        initial_count = len(self.car_park.plates)
 
         # Should now detect fine on exit
         self.exit_sensor.detect_vehicle()
+        self.assertEqual(len(self.car_park.plates), initial_count - 1)
+        self.assertEqual(self.car_park.available_bays, 100)
