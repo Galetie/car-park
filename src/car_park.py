@@ -6,6 +6,21 @@ import json
 
 
 class CarPark:
+    """
+    A car park management system that tracks vehicle entries and exits.
+    
+    This class manages parking bays, vehicle registration plates, display units,
+    and activity logging for a car park facility.
+    
+    Attributes:
+        location (str): The physical location of the car park.
+        capacity (int): The total number of parking bays available.
+        plates (list[str]): List of currently parked vehicle license plates.
+        displays (list[Display]): Connected display units showing car park information.
+        log_file (Path): Path to the activity log file.
+        config_file (Path): Path to the configuration file.
+    """
+    
     def __init__(
             self,
             location: str = 'Unknown',
