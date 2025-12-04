@@ -24,5 +24,15 @@ class TestSensor(unittest.TestCase):
         self.assertTrue(self.sensor.is_active)
 
     def test_detect_vehicle_exit(self):
-        self.sensor = ExitSensor(2, True, self.car_park)
-        self.sensor.detect_vehicle()
+        self.entry_sensor = EntrySensor(1, True, self.car_park)
+        self.exit_sensor = ExitSensor(2, True, self.car_park)
+
+        # No plates, should raise exception
+        with self.assertRaises(ValueError):
+            self.exit_sensor.detect_vehicle()
+
+        # Add a car
+        self.entry_sensor.detect_vehicle()
+
+        # Should now detect fine on exit
+        self.exit_sensor.detect_vehicle()
