@@ -25,6 +25,4 @@ class TestSensor(unittest.TestCase):
 
     def test_detect_vehicle_exit(self):
         self.sensor = ExitSensor(2, True, self.car_park)
-        # ensure method exists and can be called without raising
-        self.assertTrue(hasattr(self.sensor, "detect_vehicle"))
         self.sensor.detect_vehicle()
