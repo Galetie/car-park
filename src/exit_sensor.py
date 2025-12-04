@@ -12,7 +12,7 @@ class ExitSensor(Sensor):
     """
     
     def _scan_plate(self):
-        # Check if the car park has plates to pull from, as this is a hack
+        # Exit sensors need existing plates to simulate realistic exits
         if len(self.car_park.plates) == 0:
             return None
 

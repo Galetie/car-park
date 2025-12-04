@@ -122,7 +122,7 @@ class CarPark:
     def update_displays(self):
         display_data = {
             "available_bays": self.available_bays,
-            "temperature": 25, # TODO: Sensor or weather API
+            "temperature": 25,  # TODO: Replace hardcoded value with actual sensor reading or weather API integration
             "time": datetime.now()
         }
 
