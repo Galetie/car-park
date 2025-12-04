@@ -3,6 +3,19 @@ import random
 
 
 class Sensor(ABC):
+    """
+    Abstract base class for vehicle detection sensors.
+    
+    This class provides the interface for sensors that detect vehicles
+    entering or exiting a car park. Subclasses must implement the
+    update_car_park method to define specific behavior.
+    
+    Attributes:
+        id (int): Unique identifier for the sensor.
+        is_active (bool): Whether the sensor is currently active.
+        car_park (CarPark): Reference to the car park this sensor monitors.
+    """
+    
     def __init__(
             self,
             id: int = None,
