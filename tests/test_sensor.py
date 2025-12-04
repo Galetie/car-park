@@ -15,7 +15,10 @@ class TestSensor(unittest.TestCase):
 
     def test_detect_vehicle_entry(self):
         self.sensor = EntrySensor(1, True, self.car_park)
+        initial_count = len(self.car_park.plates)
         self.sensor.detect_vehicle()
+        self.assertEqual(len(self.car_park.plates), initial_count + 1)
+        self.assertEqual(self.car_park.available_bays, 99)
 
     def test_init_exit(self):
         self.sensor = ExitSensor(2, True, self.car_park)
